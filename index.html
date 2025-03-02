@@ -4,13 +4,8 @@
     <meta charset="utf-8" />
     <title>WCB Bakery</title>
     <meta name="description" content="こだわりのパンが勢揃いのベーカリー" />
-    <link
-      rel="icon"
-      type="svg+xml"
-      href="
-    favicon.svg"
-    />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
     <!-- CSS -->
     <link
@@ -18,47 +13,28 @@
       href="https://unpkg.com/destyle.css@1.0.5/destyle.css"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
     <link href="css/style.css" rel="stylesheet" />
-
-    <!-- Font Awesome ----
-        このFont AwesomeキットIDは他のWebサイトに使いまわしできません。
-        Font Awesomeを利用する場合はP.70〜71を参考にFont Awesomeのアカウントを登録し、
-        ご自身のキットIDで制作してください。
-    -->
     <script
       src="https://kit.fontawesome.com/3ccfc7e4b4.js"
       crossorigin="anonymous"
     ></script>
+
     <style>
       @charset "UTF-8";
 
-      /*
-      GENERAL STYLING
-      ================================================ */
       html {
         font-size: 100%;
       }
+
       body {
-        color: #555;
-        font-family: sans-serif;
+        font-family: "Poppins", sans-serif;
+        color: #333;
+        background-color: #f8f1e4;
+        text-align: center;
       }
-
-      /*
-      COMMON
-      ================================================ */
-      .title {
-        font-family: "Dancing Script", cursive;
-        font-size: 7rem;
-        margin-bottom: 2rem;
-      }
-      p {
-        line-height: 1.7;
-        font-size: 1.125rem;
-      }
-
       .container {
         overflow: auto;
         scroll-snap-type: y mandatory;
@@ -67,31 +43,79 @@
       }
       section {
         height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         scroll-snap-align: start;
         background-size: cover;
         background-repeat: no-repeat;
-        background-position: center center;
+        background-position: center;
       }
-
-      /*
-      HERO
-      ================================================ */
+      .title {
+        font-family: "Dancing Script", cursive;
+        font-size: 8rem;
+        margin-bottom: 2rem;
+        color: #d2691e;
+        text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+      }
+      p {
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 10px auto;
+      }
       .hero {
-        background-image: url(bread1.jpg);
-        text-align: center;
+        background-image: url("bread1.jpg");
+        animation: fadeIn 2s ease-in-out;
         padding-top: 10vh;
       }
-      /*
-      MENU
-      ================================================ */
       .menu {
-        background-image: url(bread2.jpg);
-        display: flex;
-        align-items: center;
+        background-image: url("bread2.jpg");
+        backdrop-filter: blur(5px);
+      }
+      .menu-list {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 15px 30px;
+        background-color: #d2691e;
+        color: white;
+        text-decoration: none;
+        border-radius: 30px;
+        transition: background 0.3s;
+      }
+      .btn:hover {
+        background-color: #a0522d;
+      }
+      .contact {
+        background: #fff5e1;
+        padding: 50px 0;
+      }
+      .contact-sns a {
+        font-size: 2rem;
+        color: #d2691e;
+        margin: 10px;
+        transition: transform 0.3s;
+      }
+      .contact-sns a:hover {
+        transform: scale(1.2);
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
     </style>
   </head>
-
   <body>
     <div class="container">
       <section class="hero">
@@ -102,11 +126,10 @@
           パンと一緒に過ごす至福のひとときをお楽しみください。
         </p>
       </section>
-
       <section class="menu">
-        <div class="wrapper">
-          <h2 class="title">Menu</h2>
-          <table class="menu-list">
+        <h2 class="title">Menu</h2>
+        <div class="menu-list">
+          <table>
             <tr>
               <th>・メロンパン</th>
               <td>¥220</td>
@@ -146,14 +169,11 @@
           </table>
         </div>
       </section>
-
       <section class="contact">
         <h2 class="title">Contact</h2>
         <p>東京都新宿区市谷左内町00-00</p>
         <p>営業時間 8:00〜20:00</p>
-
         <a class="btn" href="#">お問い合わせ</a>
-
         <ul class="contact-sns">
           <li>
             <a href="#"><i class="fab fa-facebook-square"></i></a>
