@@ -3,14 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="description" content="こだわりのパンが勢揃いのベーカリー" />
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <title>Poti Bakery</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- CSSリセット -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap"
+      rel="stylesheet"
+      href="https://unpkg.com/destyle.css@1.0.5/destyle.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
     <style>
       @charset "utf-8";
 
@@ -25,19 +31,89 @@
       .title {
         font-family: "Dancing Script", cursive;
         font-optical-sizing: auto;
-        font-weight: 400;
+        font-weight: 400px;
         font-style: normal;
       }
     </style>
   </head>
+
   <body>
-    <section class="hero">
-      <h1 class="title">Wcb Bakery</h1>
-      <p>
-        食材と食感にこだわったパンが勢揃い。<br />
-        毎朝仕込んで焼き上げています。<br />
-        パンと一緒に過ごす至福のひとときをお楽しみください。
-      </p>
-    </section>
+    <div class="container">
+      <section class="hero">
+        <h1 class="title">Wcb Bakery</h1>
+        <p>
+          食材と食感にこだわったパンが勢揃い。<br />
+          毎朝仕込んで焼き上げています。<br />
+          パンと一緒に過ごす至福のひとときをお楽しみください。
+        </p>
+      </section>
+      <section class="menu">
+        <div class="wrapper">
+          <h2 class="title">Menu</h2>
+          <table class="menu-list">
+            <tr>
+              <th>・メロンパン</th>
+              <td>¥220</td>
+            </tr>
+            <tr>
+              <th>・りんごのデニッシュ</th>
+              <td>¥240</td>
+            </tr>
+            <tr>
+              <th>・チョコレートクロワッサン</th>
+              <td>¥280</td>
+            </tr>
+            <tr>
+              <th>・バゲット</th>
+              <td>¥300</td>
+            </tr>
+            <tr>
+              <th>・いちごのペストリー</th>
+              <td>¥300</td>
+            </tr>
+            <tr>
+              <th>・そら豆のパン</th>
+              <td>¥320</td>
+            </tr>
+            <tr>
+              <th>・ブルーベリージャム</th>
+              <td>¥400</td>
+            </tr>
+            <tr>
+              <th>・レーズンとくるみのパン</th>
+              <td>¥700</td>
+            </tr>
+            <tr>
+              <th>・ランチセット</th>
+              <td>¥1,200</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <section class="contact">
+        <h2 class="title">Contact</h2>
+        <p>
+          〒000-0000<br />
+          東京都渋谷区渋谷1-1-1<br />
+          TEL: 03-0000-0000<br />
+          営業時間: 8:00〜20:00
+        </p>
+
+        <a class="btn" href="#">お問い合わせ</a>
+
+        <ul class="contact-sns">
+          <li>
+            <a href="#"><i class="fab fa-facebook-square"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </li>
+        </ul>
+      </section>
+    </div>
   </body>
 </html>
