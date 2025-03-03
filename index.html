@@ -1,191 +1,67 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <meta charset="utf-8" />
-    <title>WCB Bakery</title>
-    <meta name="description" content="こだわりのパンが勢揃いのベーカリー" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-
-    <!-- CSS -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/destyle.css@1.0.5/destyle.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link href="css/style.css" rel="stylesheet" />
-    <script
-      src="https://kit.fontawesome.com/3ccfc7e4b4.js"
-      crossorigin="anonymous"
-    ></script>
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4-5. ボタンをクリックしてページをダークモードにしよう</title>
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
     <style>
-      @charset "UTF-8";
-
-      html {
-        font-size: 100%;
-      }
+      @charset "utf-8";
 
       body {
-        font-family: "Poppins", sans-serif;
-        color: #333;
-        background-color: #f8f1e4;
-        text-align: center;
+        padding: 2rem;
+        transition: background-color 0.5s;
       }
-      .container {
-        overflow: auto;
-        scroll-snap-type: y mandatory;
-        height: 100vh;
-        text-align: center;
+      .dark-theme {
+        background: #000;
+        color: #ddd;
       }
-      section {
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        scroll-snap-align: start;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-      .title {
-        font-family: "Dancing Script", cursive;
-        font-size: 8rem;
+      #btn {
+        background-color: #0bd;
+        padding: 1rem;
         margin-bottom: 2rem;
-        color: #d2691e;
-        text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
-      }
-      p {
-        font-size: 1.2rem;
-        max-width: 600px;
-        margin: 10px auto;
-      }
-      .hero {
-        background-image: url("bread1.jpg");
-        animation: fadeIn 2s ease-in-out;
-        padding-top: 10vh;
-      }
-      .menu {
-        background-image: url("bread2.jpg");
-        backdrop-filter: blur(5px);
-      }
-      .menu-list {
-        background: rgba(255, 255, 255, 0.8);
-        padding: 20px;
-        border-radius: 10px;
-      }
-      .btn {
-        display: inline-block;
-        margin-top: 20px;
-        padding: 15px 30px;
-        background-color: #d2691e;
-        color: white;
-        text-decoration: none;
-        border-radius: 30px;
-        transition: background 0.3s;
-      }
-      .btn:hover {
-        background-color: #a0522d;
-      }
-      .contact {
-        background: #fff5e1;
-        padding: 50px 0;
-      }
-      .contact-sns a {
-        font-size: 2rem;
-        color: #d2691e;
-        margin: 10px;
-        transition: transform 0.3s;
-      }
-      .contact-sns a:hover {
-        transform: scale(1.2);
-      }
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+        font-size: 1rem;
+        color: #fff;
+        border-radius: 8px;
+        border: 0;
+        cursor: pointer;
+        box-shadow: 1px 6px 7px rgb(80, 80, 80);
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <section class="hero">
-        <h1 class="title">WCB Bakery</h1>
-        <p>
-          素材と食感にこだわったパンが勢ぞろい。<br />
-          毎朝仕込んで焼き上げています。<br />
-          パンと一緒に過ごす至福のひとときをお楽しみください。
-        </p>
-      </section>
-      <section class="menu">
-        <h2 class="title">Menu</h2>
-        <div class="menu-list">
-          <table>
-            <tr>
-              <th>・メロンパン</th>
-              <td>¥220</td>
-            </tr>
-            <tr>
-              <th>・りんごのデニッシュ</th>
-              <td>¥240</td>
-            </tr>
-            <tr>
-              <th>・チョコレートクロワッサン</th>
-              <td>¥280</td>
-            </tr>
-            <tr>
-              <th>・バゲット</th>
-              <td>¥300</td>
-            </tr>
-            <tr>
-              <th>・いちごのペストリー</th>
-              <td>¥300</td>
-            </tr>
-            <tr>
-              <th>・そら豆のパン</th>
-              <td>¥320</td>
-            </tr>
-            <tr>
-              <th>・ブルーベリージャム</th>
-              <td>¥400</td>
-            </tr>
-            <tr>
-              <th>・レーズンとくるみのパン</th>
-              <td>¥700</td>
-            </tr>
-            <tr>
-              <th>・ランチセット</th>
-              <td>¥1,200</td>
-            </tr>
-          </table>
-        </div>
-      </section>
-      <section class="contact">
-        <h2 class="title">Contact</h2>
-        <p>東京都新宿区市谷左内町00-00</p>
-        <p>営業時間 8:00〜20:00</p>
-        <a class="btn" href="#">お問い合わせ</a>
-        <ul class="contact-sns">
-          <li>
-            <a href="#"><i class="fab fa-facebook-square"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-          </li>
-        </ul>
-      </section>
-    </div>
+    <button id="btn">ダークモードにする</button>
+    <h1>ダークモードに対応させよう</h1>
+    <p>
+      私、夜間に車を運転していると、暗い所では対向車のライト以外ほとんど何も見えない状態なんですが、みんなそんなもんだと思ってたんですよね。でも話しているとどうやら私以外の人はライトじゃない部分もちゃんと見えていると…。みんな見えてるからちゃんと運転できてるってことか！こりゃー私には危険だわってことで夜間の運転はやめました。運転していなくても田舎道のような暗いところでは何も見えませんし、暗いところでスマホを見たらスマホ以外何も見えません。むしろスマホの光も眩しすぎて目が痛いです。
+    </p>
+    <p>
+      そんなわけで、暗いところで明るい色のアプリやWebサイトを見るのが非常につらく、徐々にダークモードが普及してくれて大変助かっています！！ただ、このOS側で設定できるダークモードに対応しているのは、今の所有名どころのアプリばかり。ふと暗闇でWebサイトを見ると真っ白い背景色がバーンと表示され、目がやられちゃいます。
+    </p>
+    <p>
+      そこで、前置きが長くなりましたが、Webサイトのダークモードも増やしていこう！と布教すべく、ダークモードに関する説明をしています。
+    </p>
+    <script>
+      "use strict";
+
+      {
+        const btn = document.getElementById("btn");
+
+        btn.addEventListener("click", () => {
+          // クリックされたときの処理
+          document.body.classList.toggle("dark-theme");
+
+          // もしボタンのテキストが [ダークモードにする]になっているなら
+          if (btn.textContent === "ダークモードにする") {
+            // クリックされた時に 「ライトモード」にするにするに変更
+            btn.textContent = "ライトモードにする";
+            // そうでないなら (「ライトモードにする」と表示さているなら)
+          } else {
+            // クリックされた時に 「ダークモードにする」に変更
+            btn.textContent = "ダークモードにする";
+          }
+        });
+      }
+    </script>
   </body>
 </html>
